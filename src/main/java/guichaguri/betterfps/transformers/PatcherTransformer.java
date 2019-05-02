@@ -35,6 +35,8 @@ public class PatcherTransformer implements IClassTransformer {
         patches.put(Mappings.C_Minecraft, "guichaguri/betterfps/patches/misc/MinecraftPatch");
         patches.put(Mappings.C_DedicatedServer, "guichaguri/betterfps/patches/misc/ServerPatch");
         patches.put(Mappings.C_EntityPlayerSP, "guichaguri/betterfps/patches/misc/ClientPlayerPatch");
+        
+        patches.put(Mappings.C_FontRenderer, "guichaguri/betterfps/patches/misc/FontRendererPatch");
 
         //patches.put(Mappings.C_GuiContainerCreative, "guichaguri/betterfps/patches/misc/FastCreativeSearch");
         //patches.put(Mappings.C_RenderPlayer, "guichaguri/betterfps/patches/misc/PlayerModelPatch");

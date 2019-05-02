@@ -16,7 +16,8 @@ import org.objectweb.asm.tree.MethodNode;
  */
 public enum Mappings {
 
-    // TODO: new mapping system. Maybe reading this class by a gradle task and saving the map in a file?
+    // TODO: new mapping system. Maybe reading this class by a gradle task and
+    // saving the map in a file?
 
     // Prefixes
     // C_ is for classes
@@ -50,6 +51,7 @@ public enum Mappings {
     C_IInventory(Type.CLASS, "IInventory"),
     C_GuiContainerCreative(Type.CLASS, "GuiContainerCreative"),
     C_RenderPlayer(Type.CLASS, "RenderPlayer"),
+    C_FontRenderer(Type.CLASS, "FontRenderer"),
 
     M_startGame(Type.METHOD, "startGame"), // Minecraft
     M_sin(Type.METHOD, "sin"), // MathHelper
@@ -63,28 +65,30 @@ public enum Mappings {
     M_startServer(Type.METHOD, "startServer"), // MinecraftServer
     M_captureDroppedItems(Type.METHOD, "captureDroppedItems"), // TileEntityHopper
     M_getHopperInventory(Type.METHOD, "getHopperInventory"), // TileEntityHopper
+    M_renderUnicodeChar(Type.METHOD, "renderUnicodeChar"), // FontRenderer
+    M_renderDefaultChar(Type.METHOD, "renderDefaultChar"), // FontRenderer
 
     F_memoryReserve(Type.FIELD, "memoryReserve"), // Minecraft
     F_SIN_TABLE(Type.FIELD, "SIN_TABLE"); // MathHelper
 
     public static void loadMappings(InputStream srg) throws IOException {
         List<String> lines = IOUtils.readLines(srg, "UTF-8");
-        for(String line : lines) {
+        for (String line : lines) {
             String[] m = line.split(" ");
             String identifier = m[m.length - 1];
 
-            for(Mappings mp : values()) {
-                if(m[0].equals("CL:")) {
-                    if(m.length >= 4 && mp.type == Type.CLASS && mp.identifier.equals(identifier)) {
+            for (Mappings mp : values()) {
+                if (m[0].equals("CL:")) {
+                    if (m.length >= 4 && mp.type == Type.CLASS && mp.identifier.equals(identifier)) {
                         mp.deobfName = m[2];
                         mp.obfName = m[1];
                     }
-                } else if(m[0].equals("FD:")) {
-                    if(m.length >= 4 && mp.type == Type.FIELD && mp.identifier.equals(identifier)) {
+                } else if (m[0].equals("FD:")) {
+                    if (m.length >= 4 && mp.type == Type.FIELD && mp.identifier.equals(identifier)) {
                         loadNames(m, mp, 2, 1);
                     }
-                } else if(m[0].equals("MD:")) {
-                    if(m.length >= 6 && mp.type == Type.METHOD && mp.identifier.equals(identifier)) {
+                } else if (m[0].equals("MD:")) {
+                    if (m.length >= 6 && mp.type == Type.METHOD && mp.identifier.equals(identifier)) {
                         loadNames(m, mp, 3, 1);
                         mp.deobfDesc = m[4];
                         mp.obfDesc = m[2];
@@ -165,7 +169,9 @@ public enum Mappings {
     }
 
     enum Type {
-        CLASS, METHOD, FIELD
+        CLASS,
+        METHOD,
+        FIELD
     }
 
 }

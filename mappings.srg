@@ -28,6 +28,7 @@ CL: ModelBox net/minecraft/client/model/ModelBox
 CL: EntityRenderer net/minecraft/client/renderer/EntityRenderer
 CL: GuiContainerCreative net/minecraft/client/gui/inventory/GuiContainerCreative
 CL: RenderPlayer net/minecraft/client/renderer/entity/RenderPlayer
+CL: FontRenderer net/minecraft/client/gui/FontRenderer
 
 MD: startGame net/minecraft/client/Minecraft/init ()V
 MD: freeMemory net/minecraft/client/Minecraft/freeMemory ()V
@@ -41,6 +42,14 @@ MD: initGui net/minecraft/client/gui/GuiScreen/initGui ()V
 MD: startServer net/minecraft/server/MinecraftServer/init ()Z
 MD: captureDroppedItems net/minecraft/tileentity/TileEntityHopper/captureDroppedItems (Lnet/minecraft/tileentity/IHopper;)Z
 MD: renderBeamSegment net/minecraft/client/renderer/tileentity/TileEntityBeaconRenderer/renderBeamSegment (DDDDDDII[FDD)V
+MD: loadGlyphTexture net/minecraft/client/gui/FontRenderer/loadGlyphTexture (I)V
+MD: renderUnicodeChar net/minecraft/client/gui/FontRenderer/renderUnicodeChar (CZ)F
+MD: renderDefaultChar net/minecraft/client/gui/FontRenderer/renderDefaultChar (CZ)F
 
 FD: memoryReserve net/minecraft/client/Minecraft/memoryReserve [B
 FD: SIN_TABLE net/minecraft/util/math/MathHelper/SIN_TABLE [F
+FD: glyphWidth net/minecraft/client/gui/FontRenderer/glyphWidth [B
+FD: posX net/minecraft/client/gui/FontRenderer/posX F
+FD: posY net/minecraft/client/gui/FontRenderer/posY F
+FD: locationFontTexture net/minecraft/client/gui/FontRenderer/locationFontTexture Lnet/minecraft/util/ResourceLocation;
+FD: renderEngine net/minecraft/client/gui/FontRenderer/renderEngine Lnet.minecraft.client.renderer.texture.TextureManager;
