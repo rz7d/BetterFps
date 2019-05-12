@@ -1,4 +1,3 @@
-*gradle/
 build/
 lib/
 logs/
@@ -10,5 +9,4 @@ betterfps.txt
 BetterFps.iml
 BetterFps.ipr
 BetterFps.iws
-gradlew*
 src/main/resources/betterfps.srg
