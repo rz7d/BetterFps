@@ -24,7 +24,7 @@ public class BetterFpsResourcePack implements IResourcePack {
     }
 
     private String getPath(ResourceLocation location) {
-        return String.format("assets/%s/%s", location.getResourceDomain(), location.getResourcePath()).toLowerCase();
+        return String.format("assets/%s/%s", location.getNamespace(), location.getPath()).toLowerCase();
     }
 
     @Override
