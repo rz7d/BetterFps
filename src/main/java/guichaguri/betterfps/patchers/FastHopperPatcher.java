@@ -26,7 +26,7 @@ public class FastHopperPatcher implements IClassPatcher {
         ClassNode source = patch.getSourceClass();
         ClassNode target = patch.getTargetClass();
 
-        MethodNode method = ASMUtils.findMethod(target, Mappings.M_captureDroppedItems);
+        MethodNode method = ASMUtils.findMethod(target, Mappings.M_pullItems);
         if(method == null) return; // Method doesn't exist?
 
         MethodNode pickupItem = patch.getMethod(PICKUP_ITEMS);

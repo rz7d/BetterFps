@@ -63,7 +63,7 @@ public enum Mappings {
     M_freeMemory(Type.METHOD, "freeMemory"), // Minecraft
     M_initGui(Type.METHOD, "initGui"), // GuiScreen
     M_startServer(Type.METHOD, "startServer"), // MinecraftServer
-    M_captureDroppedItems(Type.METHOD, "captureDroppedItems"), // TileEntityHopper
+    M_pullItems(Type.METHOD, "pullItems"), // TileEntityHopper
     M_getHopperInventory(Type.METHOD, "getHopperInventory"), // TileEntityHopper
     M_renderUnicodeChar(Type.METHOD, "renderUnicodeChar"), // FontRenderer
     M_renderDefaultChar(Type.METHOD, "renderDefaultChar"), // FontRenderer
